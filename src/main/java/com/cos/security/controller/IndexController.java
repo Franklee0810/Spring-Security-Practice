@@ -54,7 +54,7 @@ public class IndexController {
 	
 	@PostMapping("/join")
 	public String join(User user) {
-		System.out.println(11 );
+	 
 		
 		user.setRole("ROLE_USER");
 		
@@ -64,10 +64,13 @@ public class IndexController {
 		
 		userRepository.save(user);
 		
-		
-		System.out.println(user);
-		
+ 
 		return "redirect:/loginForm";
+	}
+	
+	@GetMapping("/info")
+	public String joinForm() {
+		return "joinForm";
 	}
  
 }
