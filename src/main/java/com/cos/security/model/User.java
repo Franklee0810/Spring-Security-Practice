@@ -30,48 +30,82 @@ public class User {
 	@CreationTimestamp
 	private Timestamp createDate;
 	
+	private String provider; //구글 
+	
+	private String providerId;
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public String getUsername() {
 		return username;
 	}
+
 	public void setUsername(String username) {
 		this.username = username;
 	}
+
 	public String getPassword() {
 		return password;
 	}
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 	public String getRole() {
 		return role;
 	}
+
 	public void setRole(String role) {
 		this.role = role;
 	}
+
 	public Timestamp getCreateDate() {
 		return createDate;
 	}
+
 	public void setCreateDate(Timestamp createDate) {
 		this.createDate = createDate;
 	}
+
+	public String getProvider() {
+		return provider;
+	}
+
+	public void setProvider(String provider) {
+		this.provider = provider;
+	}
+
+	public String getProviderId() {
+		return providerId;
+	}
+
+	public void setProviderId(String providerId) {
+		this.providerId = providerId;
+	}
+	
 	
 	
 	public User() {
 		// TODO Auto-generated constructor stub
 	}
-	public User(int id, String username, String password, String email, String role, Timestamp createDate) {
+
+	public User(int id, String username, String password, String email, String role, Timestamp createDate,
+			String provider, String providerId) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -79,7 +113,10 @@ public class User {
 		this.email = email;
 		this.role = role;
 		this.createDate = createDate;
+		this.provider = provider;
+		this.providerId = providerId;
 	}
+	
 	
 	
 }
