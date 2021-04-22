@@ -2,12 +2,14 @@ package com.cos.security.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.cos.security.config.auth.PrincipalDetails;
 import com.cos.security.model.User;
 import com.cos.security.repository.UserRepository;
 
@@ -21,6 +23,16 @@ public class IndexController {
 	
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
+	
+	@GetMapping("/test/login")
+	public @ResponseBody String testLogin(Authentication authentication) {
+		System.out.println("/test/login ========");
+		
+		PrincipalDetails principalDetails = (PrincipalDetails) authentication.getPrincipal();
+		
+		System.out.println("authentication : " + principalDetails.getUser());
+		return "세션정보 확인하기";
+	}
 	
 	@GetMapping({"", "/"})
 	public String index() {
