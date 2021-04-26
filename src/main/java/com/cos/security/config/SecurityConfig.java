@@ -17,7 +17,7 @@ import com.cos.security.config.oauth.PrincipalOauth2UserService;
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	
 	@Autowired
-	PrincipalOauth2UserService principalDetailsService;
+	PrincipalOauth2UserService principalOauth2UserService;
 	
 	
 	@Bean //해당 메소드의 리턴되는 오브젝트를 Ioc에 등록해줌 
@@ -42,7 +42,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 			.oauth2Login()
 			.loginPage("/loginForm")
 			.userInfoEndpoint()
-			.userService(principalDetailsService);
+			.userService(principalOauth2UserService);
 			
 	}
 }

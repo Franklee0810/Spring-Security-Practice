@@ -11,7 +11,7 @@ import lombok.Data;
 
 // ORM - Object Relation Mapping
 
-@Data
+
 @Entity
 public class User {
 	
@@ -32,7 +32,7 @@ public class User {
 	
 	private String provider; //구글 
 	
-	private String providerId;
+	private String providerId; //getAttributes()로 받은 정보 중 sub의 값 
 
 	public int getId() {
 		return id;
@@ -100,6 +100,12 @@ public class User {
 	
 	
 	
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", username=" + username + ", password=" + password + ", email=" + email + ", role="
+				+ role + ", createDate=" + createDate + ", provider=" + provider + ", providerId=" + providerId + "]";
+	}
+
 	public User() {
 		// TODO Auto-generated constructor stub
 	}
