@@ -53,14 +53,20 @@ public class IndexController {
 		return "OAuth세션정보 확인하기";
 	}
 	
+	
+	
 	@GetMapping({"", "/"})
 	public String index() {
 		return "index" ;
 	}
 	
 	
+	//OAuth 로그인, 일반 로그인 둘다 PrincipalDetails로 받게끔 
 	@GetMapping("/user")
-	public @ResponseBody String user() {
+	public @ResponseBody String user(@AuthenticationPrincipal PrincipalDetails principalDetails) {
+		
+		System.out.println("principalDetails: " + principalDetails.getUser());
+		
 		return "user";
 	}
 	

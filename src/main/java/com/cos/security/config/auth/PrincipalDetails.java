@@ -94,13 +94,11 @@ public class PrincipalDetails implements UserDetails, OAuth2User{
 
 	@Override
 	public Map<String, Object> getAttributes() {
-		// TODO Auto-generated method stub
 		return attributes;
 	}
 
 	@Override
-	public String getName() {
-		// TODO Auto-generated method stub
+	public String getName() { 
 		return null;
 	}
 	
